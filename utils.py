@@ -602,7 +602,7 @@ async def get_token(bot, userid, link):
     token = ''.join(random.choices(string.ascii_letters + string.digits, k=7))
     TOKENS[user.id] = {token: False}
     link = f"{link}verify-{user.id}-{token}"
-    shortened_verify_url = f"https://aninkoo.github.io/PaxTV/jan_2024/clickbait_ltns_long_time_no_sex.html#{link}"
+    shortened_verify_url = f"https://aninkoo.github.io/PaxTV/index.html#{link}"
     return str(shortened_verify_url)
 
 async def verify_user(bot, userid, token):
