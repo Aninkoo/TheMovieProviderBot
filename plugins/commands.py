@@ -295,7 +295,7 @@ async def start(client, message):
         token = data.split("-", 3)[2]
         if str(message.from_user.id) != str(userid):
             return await message.reply_text(
-                text="<b>Invalid link or Expired link !</b>",
+                text="<b>Invalid link or Expired link ! \n⬆️Make sure to use the last Verification Button above ⬆️</b>",
                 protect_content=True
             )
         is_valid = await check_token(client, userid, token)
@@ -307,7 +307,7 @@ async def start(client, message):
             await verify_user(client, userid, token)
         else:
             return await message.reply_text(
-                text="<b>Invalid link or Expired link !</b>",
+                text="<b>Invalid link or Expired link ! \n⬆️Make sure to use the last Verification Button above ⬆️</b>",
                 protect_content=True
             )
     if data.startswith("sendfiles"):
