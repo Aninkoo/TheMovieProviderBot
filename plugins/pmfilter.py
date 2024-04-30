@@ -2047,7 +2047,7 @@ async def auto_filter(client, msg, spoll=False):
                     continue
                 else:
                     search = search + x + " "
-            search = re.sub(r"\b(pl(i|e)*?(s|z+|ease|se|ese|(e+)s(e)?)|((send|snd|giv(e)?|gib)(\sme)?)|movie(s)?|new|latest|bro|bruh|broh|helo|that|find|dubbed|link|venum|iruka|pannunga|pannungga|anuppunga|anupunga|anuppungga|anupungga|film|undo|kitti|kitty|tharu|kittumo|kittum|movie|any(one)|with\ssubtitle(s)?)", "", search, flags=re.IGNORECASE)
+            # search = re.sub(r"\b(pl(i|e)*?(s|z+|ease|se|ese|(e+)s(e)?)|((send|snd|giv(e)?|gib)(\sme)?)|movie(s)?|new|latest|bro|bruh|broh|helo|that|find|dubbed|link|venum|iruka|pannunga|pannungga|anuppunga|anupunga|anuppungga|anupungga|film|undo|kitti|kitty|tharu|kittumo|kittum|movie|any(one)|with\ssubtitle(s)?)", "", search, flags=re.IGNORECASE)
             search = re.sub(r"\s+", " ", search).strip()
             search = search.replace("-", " ")
             search = search.replace(":","")
@@ -2255,7 +2255,7 @@ async def advantage_spell_chok(client, msg):
             continue
         else:
             query = query + x + " "
-    query = re.sub(r"\b(pl(i|e)*?(s|z+|ease|se|ese|(e+)s(e)?)|((send|snd|giv(e)?|gib)(\sme)?)|movie(s)?|new|latest|bro|bruh|broh|helo|that|find|dubbed|link|venum|iruka|pannunga|pannungga|anuppunga|anupunga|anuppungga|anupungga|film|undo|kitti|kitty|tharu|kittumo|kittum|movie|any(one)|with\ssubtitle(s)?)", "", query, flags=re.IGNORECASE)
+    # query = re.sub(r"\b(pl(i|e)*?(s|z+|ease|se|ese|(e+)s(e)?)|((send|snd|giv(e)?|gib)(\sme)?)|movie(s)?|new|latest|bro|bruh|broh|helo|that|find|dubbed|link|venum|iruka|pannunga|pannungga|anuppunga|anupunga|anuppungga|anupungga|film|undo|kitti|kitty|tharu|kittumo|kittum|movie|any(one)|with\ssubtitle(s)?)", "", query, flags=re.IGNORECASE)
     query = re.sub(r"\s+", " ", query).strip() + "movie"
     try:
         g_s = await search_gagala(query)
@@ -2278,7 +2278,7 @@ async def advantage_spell_chok(client, msg):
         regex = re.compile(r".*(imdb|wikipedia).*", re.IGNORECASE)  # look for imdb / wiki results
         gs = list(filter(regex.match, g_s))
         gs_parsed = [re.sub(
-            r'\b(\-([a-zA-Z-\s])\-\simdb|(\-\s)?imdb|(\-\s)?wikipedia|\-|reviews|full|all|episode(s)?|film|movie|series)',
+            r'\b(\-([a-zA-Z-\s])\-\simdb|(\-\s)?imdb|(\-\s)?wikipedia|\(|\)|\-|reviews|full|all|episode(s)?|film|movie|series)',
             '', i, flags=re.IGNORECASE) for i in gs]
         if not gs_parsed:
             reg = re.compile(r"watch(\s[a-zA-Z0-9_\s\-]*)*\|.*",
@@ -2296,7 +2296,7 @@ async def advantage_spell_chok(client, msg):
                 imdb_s = await get_poster(mov.strip(), bulk=True)  # searching each keyword in imdb
                 if imdb_s:
                     movielist += [movie.get('title') for movie in imdb_s]
-        movielist += [(re.sub(r'(\-|_)', '', i, flags=re.IGNORECASE)).strip() for i in gs_parsed]
+        movielist += [(re.sub(r'(\-|\(|\)|_)', '', i, flags=re.IGNORECASE)).strip() for i in gs_parsed]
         movielist = list(dict.fromkeys(movielist))  # removing duplicates
         if not movielist:
             reqst_gle = query.replace(" ", "+")
