@@ -426,7 +426,7 @@ async def start(client, message):
               InlineKeyboardButton('⚡💡Check New Updates💡⚡', url=f'https://t.me/+cXlkHDKryok0YmFk')
              ],
              [
-              InlineKeyboardButton('🤑Oᴡɴ ᴛʜɪs Bᴏᴛ🤖', callback_data="shortlink_info")
+              InlineKeyboardButton('🤑Oᴡɴ ᴛʜɪs Bᴏᴛ🤖', callback_data="caption_shortlink")
              ]
             ]
         )
@@ -505,7 +505,7 @@ async def start(client, message):
               InlineKeyboardButton('⚡💡Check New Updates💡⚡', url=f'https://t.me/+cXlkHDKryok0YmFk')
              ],
              [
-              InlineKeyboardButton('🤑Oᴡɴ ᴛʜɪs Bᴏᴛ🤖', callback_data="shortlink_info")
+              InlineKeyboardButton('🤑Oᴡɴ ᴛʜɪs Bᴏᴛ🤖', callback_data="caption_shortlink")
              ]
             ]
         )
@@ -564,7 +564,7 @@ async def start(client, message):
               InlineKeyboardButton('⚡💡Check New Updates💡⚡', url=f'https://t.me/+cXlkHDKryok0YmFk')
              ],
              [
-              InlineKeyboardButton('🤑Oᴡɴ ᴛʜɪs Bᴏᴛ🤖', callback_data="shortlink_info")
+              InlineKeyboardButton('🤑Oᴡɴ ᴛʜɪs Bᴏᴛ🤖', callback_data="caption_shortlink")
              ]
             ]
         )
