@@ -1886,14 +1886,14 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "caption_info":
             btn = [[
-              InlineKeyboardButton('🔍 New Search 🔎', url=f'https://t.me/paxmovies')
-             ],[
-              InlineKeyboardButton('⚡💡Check New Updates💡⚡', url=f'https://t.me/+cXlkHDKryok0YmFk')
-             ],[
-              InlineKeyboardButton('🤑Oᴡɴ ᴛʜɪs Bᴏᴛ🤖', callback_data="caption_shortlink")
-             ]]
+            InlineKeyboardButton('🔍 New Search 🔎', url=f'https://t.me/paxmovies')
+            ],[
+            InlineKeyboardButton('⚡💡Check New Updates💡⚡', url=f'https://t.me/+cXlkHDKryok0YmFk')
+            ],[
+            InlineKeyboardButton('🤑Oᴡɴ ᴛʜɪs Bᴏᴛ🤖', callback_data="caption_shortlink")
+            ]]
             reply_markup = InlineKeyboardMarkup(btn)
-            f_caption=CUSTOM_FILE_CAPTION.format(file_name= '' if title is None else title, file_size='' if size is None else size, file_caption='' if f_caption is None else f_caption)
+            f_caption = CUSTOM_FILE_CAPTION.format(file_name= '' if title is None else title, file_size='' if size is None else size, file_caption='' if f_caption is None else f_caption)
             await query.message.edit_text(
                 text=f_caption,
                 reply_markup=reply_markup,
