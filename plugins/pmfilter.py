@@ -14,7 +14,7 @@ from Script import script
 import pyrogram
 from database.connections_mdb import active_connection, all_connections, delete_connection, if_active, make_active, \
     make_inactive
-from info import *
+from info import CUSTOM_FILE_CAPTION
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery, InputMediaPhoto
 from pyrogram import Client, filters, enums
 from pyrogram.errors import FloodWait, UserIsBlocked, MessageNotModified, PeerIdInvalid
@@ -1884,6 +1884,33 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
+    elif query.data == "caption_info":
+            btn = [[
+              InlineKeyboardButton('🔍 New Search 🔎', url=f'https://t.me/paxmovies')
+             ],[
+              InlineKeyboardButton('⚡💡Check New Updates💡⚡', url=f'https://t.me/+cXlkHDKryok0YmFk')
+             ],[
+              InlineKeyboardButton('🤑Oᴡɴ ᴛʜɪs Bᴏᴛ🤖', callback_data="caption_shortlink")
+             ]]
+            reply_markup = InlineKeyboardMarkup(btn)
+            f_caption=CUSTOM_FILE_CAPTION.format(file_name= '' if title is None else title, file_size='' if size is None else size, file_caption='' if f_caption is None else f_caption)
+            await query.message.edit_text(
+                text=f_caption,
+                reply_markup=reply_markup,
+                parse_mode=enums.ParseMode.HTML
+            )
+    elif query.data == "caption_shortlink":
+            btn = [[
+            InlineKeyboardButton("📝 Cᴏɴᴛᴀᴄᴛ ADMIN", url=f"https://t.me/Mr_John_NigMore")
+            ],[
+            InlineKeyboardButton('⇋ ʙᴀᴄᴋ ᴛᴏ ʜᴏᴍᴇ ⇋', callback_data='caption_info')
+            ]]
+            reply_markup = InlineKeyboardMarkup(btn)
+            await query.message.edit_text(
+                text=(script.SHORTLINK_INFO),
+                reply_markup=reply_markup,
+                parse_mode=enums.ParseMode.HTML
+            )
     elif query.data == "shortlink_info":
             btn = [[
             InlineKeyboardButton("📝 Cᴏɴᴛᴀᴄᴛ ADMIN", url=f"https://t.me/Mr_John_NigMore")
