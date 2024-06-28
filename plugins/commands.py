@@ -420,13 +420,13 @@ async def start(client, message):
                 reply_markup=InlineKeyboardMarkup(
             [
              [
-              InlineKeyboardButton('🔍 New Search 🔎', url=f'https://t.me/paxmovies'),
+              InlineKeyboardButton('🔍 New Search 🔎', url=f'https://t.me/paxmovies')
              ],
              [
               InlineKeyboardButton('⚡💡Check New Updates💡⚡', url=f'https://t.me/+cXlkHDKryok0YmFk')
              ],
              [
-              InlineKeyboardButton('🤑Oᴡɴ ᴛʜɪs Bᴏᴛ🤖', callback_data="shortlink_info"),
+              InlineKeyboardButton('🤑Oᴡɴ ᴛʜɪs Bᴏᴛ🤖', callback_data="shortlink_info")
              ]
             ]
         )
@@ -499,10 +499,13 @@ async def start(client, message):
                 reply_markup=InlineKeyboardMarkup(
             [
              [
-              InlineKeyboardButton('🔍 New Search 🔎', url=f'https://t.me/paxmovies'),
+              InlineKeyboardButton('🔍 New Search 🔎', url=f'https://t.me/paxmovies')
              ],
              [
-              InlineKeyboardButton('⚡💡Check New Updates💡⚡', url=f'https://t.me/+cXlkHDKryok0YmFk') #Don't change anything without contacting me @LazyDeveloperr
+              InlineKeyboardButton('⚡💡Check New Updates💡⚡', url=f'https://t.me/+cXlkHDKryok0YmFk')
+             ],
+             [
+              InlineKeyboardButton('🤑Oᴡɴ ᴛʜɪs Bᴏᴛ🤖', callback_data="shortlink_info")
              ]
             ]
         )
@@ -555,10 +558,13 @@ async def start(client, message):
         reply_markup=InlineKeyboardMarkup(
             [
              [
-              InlineKeyboardButton('🔍 New Search 🔎', url=f'https://t.me/paxmovies'),
+              InlineKeyboardButton('🔍 New Search 🔎', url=f'https://t.me/paxmovies')
              ],
              [
-              InlineKeyboardButton('⚡💡Check New Updates💡⚡', url=f'https://t.me/+cXlkHDKryok0YmFk') #Don't change anything without contacting me @LazyDeveloperr
+              InlineKeyboardButton('⚡💡Check New Updates💡⚡', url=f'https://t.me/+cXlkHDKryok0YmFk')
+             ],
+             [
+              InlineKeyboardButton('🤑Oᴡɴ ᴛʜɪs Bᴏᴛ🤖', callback_data="shortlink_info")
              ]
             ]
         )
