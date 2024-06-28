@@ -1886,8 +1886,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "shortlink_info":
             btn = [[
-            InlineKeyboardButton("1 / 3", callback_data="pagesn1"),
-            InlineKeyboardButton("ɴᴇxᴛ ⋟", callback_data="shortlink_info2")
+            InlineKeyboardButton("📝 Cᴏɴᴛᴀᴄᴛ ADMIN", url=f"https://t.me/Mr_John_NigMore")
             ],[
             InlineKeyboardButton('⇋ ʙᴀᴄᴋ ᴛᴏ ʜᴏᴍᴇ ⇋', callback_data='start')
             ]]
