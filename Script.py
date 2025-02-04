@@ -261,6 +261,8 @@ Rᴇǫᴜᴇsᴛ : <b>{}</b>"""
 <b>📀 File Size:</b> {file_size} 
 
 <b>Join 👉 <a href="https://t.me/+cXlkHDKryok0YmFk">PaxMOVIES</a> 👈 for more!</b>
+
+⚠️<b>Disclaimer</b>: This Video File is available on the internet. <b>PaxMOVIES</b> or its subsidiary channel doesn't own or produced this video.
 """
 
     IMDB_TEMPLATE_TXT = """
