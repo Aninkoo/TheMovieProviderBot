@@ -1,6 +1,6 @@
 import logging
 from pyrogram.errors import InputUserDeactivated, UserNotParticipant, FloodWait, UserIsBlocked, PeerIdInvalid
-from info import AUTH_CHANNEL, LONG_IMDB_DESCRIPTION, MAX_LIST_ELM, SHORTLINK_URL, SHORTLINK_API, IS_SHORTLINK, LOG_CHANNEL, TUTORIAL, GRP_LNK, CHNL_LNK, CUSTOM_FILE_CAPTION
+from info import AUTH_CHANNEL, LONG_IMDB_DESCRIPTION, MAX_LIST_ELM, SHORTLINK_URL, SHORTLINK_API, IS_SHORTLINK, LOG_CHANNEL, TUTORIAL, GRP_LNK, CHNL_LNK, CUSTOM_FILE_CAPTION, OWN
 from imdb import Cinemagoer 
 import asyncio
 from pyrogram.types import Message, InlineKeyboardButton, InlineKeyboardMarkup
@@ -656,16 +656,18 @@ async def check_verification(bot, userid):
         await bot.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(user.id, user.mention))
     tz = pytz.timezone('Asia/Kolkata')
     today = date.today()
-    if user.id in VERIFIED.keys():
-        EXP = VERIFIED[user.id]
-        years, month, day = EXP.split('-')
-        comp = date(int(years), int(month), int(day))
-        if comp<today:
-            return False
+    if user.id == OWN:
+        return True
+        elif user.id in VERIFIED.keys():
+            EXP = VERIFIED[user.id]
+            years, month, day = EXP.split('-')
+            comp = date(int(years), int(month), int(day))
+            if comp<today:
+                return False
+            else:
+                return True
         else:
-            return True
-    else:
-        return False
+            return False
     
     
 async def send_all(bot, userid, files, ident, chat_id, user_name, query):
