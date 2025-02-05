@@ -659,16 +659,16 @@ async def check_verification(bot, userid):
     today = date.today()
     if user.id == OWN:
         return True
-        elif user.id in VERIFIED.keys():
-            EXP = VERIFIED[user.id]
-            years, month, day = EXP.split('-')
-            comp = date(int(years), int(month), int(day))
-            if comp<today:
-                return False
-            else:
-                return True
-        else:
+    elif user.id in VERIFIED.keys():
+        EXP = VERIFIED[user.id]
+        years, month, day = EXP.split('-')
+        comp = date(int(years), int(month), int(day))
+        if comp<today:
             return False
+        else:
+            return True
+    else:
+        return False
     
     
 async def send_all(bot, userid, files, ident, chat_id, user_name, query):
